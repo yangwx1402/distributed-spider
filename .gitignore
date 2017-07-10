@@ -1,0 +1,5 @@
+/.idea
+/target
+/distributed-spider-cluster/target
+/distributed-spider-core/target
+/distributed-spider-crawler/target
