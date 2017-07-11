@@ -1,9 +1,10 @@
-package com.young.spider.cluster.example
+package com.young.spider.cluster.example.single
 
 import akka.actor._
-import akka.cluster.ClusterEvent.{MemberRemoved, MemberUp, UnreachableMember, MemberEvent}
-import akka.cluster.{ClusterEvent, Cluster}
+import akka.cluster.ClusterEvent.{MemberEvent, MemberRemoved, MemberUp, UnreachableMember}
+import akka.cluster.{Cluster, ClusterEvent}
 import akka.event.Logging
+import com.typesafe.config.ConfigFactory
 
 /**
   * Created by yangyong3 on 2017/7/10.
@@ -39,7 +40,7 @@ class ClusterListenerActor extends Actor {
 
 object ClusterListenerActor {
   def main(args: Array[String]) {
-    val system = ActorSystem("cluster")
+    val system = ActorSystem("cluster",ConfigFactory.load("single-application.conf"))
     val actor = system.actorOf(Props[ClusterListenerActor])
   }
 }
