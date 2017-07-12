@@ -1,7 +1,7 @@
 package com.young.spider.cluster.example.group
 
 import akka.actor.{Actor, ActorSystem, Props}
-import akka.cluster.ClusterEvent.{MemberJoined, CurrentClusterState, MemberUp}
+import akka.cluster.ClusterEvent.{MemberEvent, MemberJoined, CurrentClusterState, MemberUp}
 import akka.cluster.{Cluster, Member, MemberStatus}
 import akka.event.Logging
 import com.typesafe.config.ConfigFactory
@@ -16,7 +16,7 @@ class ServerRoleGroupActor extends Actor {
   val cluster = Cluster.get(context.system)
 
   override def preStart(): Unit = {
-    cluster.subscribe(self, classOf[MemberUp],classOf[MemberJoined])
+    cluster.subscribe(self, classOf[MemberEvent])
   }
 
   override def postStop(): Unit = {
@@ -26,9 +26,10 @@ class ServerRoleGroupActor extends Actor {
   override def receive: Receive = {
     case message: TextRequest => sender() ! TextResponse(message.text.toUpperCase, ResponseStatus("ok", ""))
     case state: CurrentClusterState =>
-      val it = state.getMembers.iterator()
-        println("sdfsfsdfsf"+state.getMembers)
-    case other: Any => unhandled(other)
+      val it = state.members
+        println("sdfsfsdfsf"+state.members)
+    case state:MemberUp=>log.info("haha member is up {}",state.member)
+    case other: Any => log.info("other message is {}",other)
   }
 
 }
