@@ -16,6 +16,7 @@ class ServerRoleGroupActor extends Actor {
   val cluster = Cluster.get(context.system)
 
   override def preStart(): Unit = {
+    //注册自己关心的事件
     cluster.subscribe(self, classOf[MemberEvent])
   }
 
@@ -24,10 +25,9 @@ class ServerRoleGroupActor extends Actor {
   }
 
   override def receive: Receive = {
+    //接收client发送来的消息并进行处理
     case message: TextRequest => sender() ! TextResponse(message.text.toUpperCase, ResponseStatus("ok", ""))
-    case state: CurrentClusterState =>
-      val it = state.members
-        println("sdfsfsdfsf"+state.members)
+    //接收节点启动消息，集群中有节点启动就会发送该消息
     case state:MemberUp=>log.info("haha member is up {}",state.member)
     case other: Any => log.info("other message is {}",other)
   }
