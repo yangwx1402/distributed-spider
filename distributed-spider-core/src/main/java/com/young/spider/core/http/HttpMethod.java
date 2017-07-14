@@ -1,4 +1,4 @@
-package com.young.spider.http;
+package com.young.spider.core.http;
 
 /**
  * Created by yangyong3 on 2017/7/7.

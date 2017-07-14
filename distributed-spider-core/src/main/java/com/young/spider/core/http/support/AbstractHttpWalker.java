@@ -1,7 +1,7 @@
-package com.young.spider.http.support;
+package com.young.spider.core.http.support;
 
 
-import com.young.spider.http.Request;
+import com.young.spider.core.http.Request;
 
 import java.io.IOException;
 

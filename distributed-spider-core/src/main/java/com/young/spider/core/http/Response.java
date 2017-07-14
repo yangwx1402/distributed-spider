@@ -1,4 +1,4 @@
-package com.young.spider.http;
+package com.young.spider.core.http;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;

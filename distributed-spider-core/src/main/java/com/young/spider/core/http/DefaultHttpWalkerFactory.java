@@ -1,6 +1,6 @@
-package com.young.spider.http;
+package com.young.spider.core.http;
 
-import com.young.spider.http.support.HttpClientWalker;
+import com.young.spider.core.http.support.HttpClientWalker;
 
 /**
  * Created by yangyong3 on 2017/7/7.

@@ -1,10 +1,10 @@
-package com.young.spider.http.support;
+package com.young.spider.core.http.support;
 
 
 
-import com.young.spider.http.HttpWalker;
-import com.young.spider.http.Request;
-import com.young.spider.http.Response;
+import com.young.spider.core.http.HttpWalker;
+import com.young.spider.core.http.Request;
+import com.young.spider.core.http.Response;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
@@ -22,7 +22,6 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

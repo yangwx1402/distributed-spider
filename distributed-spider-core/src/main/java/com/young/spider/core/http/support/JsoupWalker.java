@@ -1,8 +1,8 @@
-package com.young.spider.http.support;
+package com.young.spider.core.http.support;
 
-import com.young.spider.http.HttpWalker;
-import com.young.spider.http.Request;
-import com.young.spider.http.Response;
+import com.young.spider.core.http.HttpWalker;
+import com.young.spider.core.http.Request;
+import com.young.spider.core.http.Response;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Connection;
 import org.jsoup.helper.HttpConnection;

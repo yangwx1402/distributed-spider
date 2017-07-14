@@ -1,4 +1,4 @@
-package com.young.spider.http;
+package com.young.spider.core.http;
 
 import java.io.IOException;
 

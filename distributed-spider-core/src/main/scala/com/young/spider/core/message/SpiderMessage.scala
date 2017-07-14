@@ -5,6 +5,7 @@ package com.young.spider.core.message
   */
 case class CrawlerEntity[Meta](meta:Meta,body:String)
 
-case class ParserEntity[T](crawlerEntity: CrawlerEntity[T])
+case class ParserEntity[Meta,Result](crawlerEntity: CrawlerEntity[Meta])
+
 
 
