@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class Request implements Serializable {
 
-    private HttpMethod method;
+    private HttpMethod method = HttpMethod.GET;
 
     private String url;
 
@@ -16,7 +16,7 @@ public class Request implements Serializable {
 
     private Map<String, String> parameters;
 
-    private String encode;
+    private String encode = "utf-8";
 
     public Map<String, String> getHeader() {
         return header;

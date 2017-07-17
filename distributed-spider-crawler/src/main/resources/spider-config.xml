@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<spider name="spider-name">
+     <messageQueue classname="">
+         <properties>
+             <property name="" value="" />
+         </properties>
+     </messageQueue>
+     <crawler classname="">
+         <properties>
+             <property></property>
+         </properties>
+     </crawler>
+     <parser classname="">
+         <properties>
+             <property></property>
+         </properties>
+     </parser>
+     <persister classname="">
+         <properties>
+             <property></property>
+         </properties>
+     </persister>
+</spider>

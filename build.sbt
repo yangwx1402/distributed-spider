@@ -13,6 +13,7 @@ val jsoup_version = "1.10.3"
 val commons_logging_version = "1.2"
 val jedis_version = "2.8.1"
 val slf4j_version = "1.7.25"
+val xstream_version = "1.4.9"
 val codePro = Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 val resources = Seq("Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
   "Maven Repository" at "http://repo1.maven.org/maven2/",
@@ -37,7 +38,8 @@ val spider_core = Project("distributed-spider-core", file("distributed-spider-co
   libraryDependencies += "org.jsoup" % "jsoup" % jsoup_version,
   libraryDependencies += "commons-logging" % "commons-logging" % commons_logging_version,
   libraryDependencies += "redis.clients" % "jedis" % jedis_version,
-  libraryDependencies += "org.slf4j" % "slf4j-api" % slf4j_version
+  libraryDependencies += "org.slf4j" % "slf4j-api" % slf4j_version,
+  libraryDependencies += "com.thoughtworks.xstream" % "xstream" % xstream_version
 )
 //爬虫
 val spider_cralwer = Project("distributed-spider-crawler", file("distributed-spider-crawler")).settings(
