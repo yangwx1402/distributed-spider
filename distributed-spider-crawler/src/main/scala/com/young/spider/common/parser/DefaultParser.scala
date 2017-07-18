@@ -10,5 +10,6 @@ import com.young.spider.core.parser.Parser
 class DefaultParser extends Parser[String,HttpPage]{
   override def parse(crawlerEntity: CrawlerEntity[String], config: ParserConfig): ParserEntity[String, HttpPage] = {
     val html = crawlerEntity.body
+    null
   }
 }

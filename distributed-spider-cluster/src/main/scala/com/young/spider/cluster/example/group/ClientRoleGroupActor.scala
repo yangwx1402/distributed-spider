@@ -40,6 +40,7 @@ class ClientRoleGroupActor extends Actor {
     case message: TextRequest =>
       println("client receive a request " + message)
       client_sender = sender()
+
       //如果没有可用的服务端
       if (servers.isEmpty) {
         sender() ! TextResponse(message.text, ResponseStatus("error", "Service unavailable, try again later"))

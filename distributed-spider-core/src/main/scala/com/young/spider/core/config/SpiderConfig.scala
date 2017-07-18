@@ -7,11 +7,12 @@ import com.thoughtworks.xstream.annotations.{XStreamImplicit, XStreamAsAttribute
   */
 @XStreamAlias("spider")
 case class SpiderConfig()
-@XStreamAlias
-case class SpiderMessageQueue(@XStreamAsAttribute classname:String,@XStreamAlias properties:SpiderProperties)
+@XStreamAlias("messageQueue")
+case class SpiderMessageQueue(@XStreamAsAttribute classname:String,properties:SpiderProperties)
 
-case class SpiderCrawler(@XStreamAsAttribute classname:String,@XStreamAlias properties:SpiderProperties)
-@XStreamAlias
+@XStreamAlias("crawler")
+case class SpiderCrawler(@XStreamAsAttribute classname:String, properties:SpiderProperties)
+@XStreamAlias("properties")
 case class SpiderProperties(@XStreamImplicit(itemFieldName = "property") properties:Array[SpiderProperty])
 
 @XStreamAlias("property")

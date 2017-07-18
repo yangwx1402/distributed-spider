@@ -14,6 +14,7 @@ val commons_logging_version = "1.2"
 val jedis_version = "2.8.1"
 val slf4j_version = "1.7.25"
 val xstream_version = "1.4.9"
+val kyro_version = "2.24.0"
 val codePro = Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 val resources = Seq("Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
   "Maven Repository" at "http://repo1.maven.org/maven2/",
@@ -27,7 +28,6 @@ val spider_core = Project("distributed-spider-core", file("distributed-spider-co
   resolvers ++= resources,
   scalaVersion := scala_version,
   scalacOptions := codePro,
-  libraryDependencies += "com.typesafe.akka" %% "akka-actor" % akka_version,
   libraryDependencies += "org.apache.httpcomponents" % "httpclient" % httpClient_version,
   libraryDependencies += "org.apache.httpcomponents" % "httpmime" % httpClient_version,
   libraryDependencies += "org.apache.httpcomponents" % "httpcore" % httpClient_version,
@@ -39,7 +39,9 @@ val spider_core = Project("distributed-spider-core", file("distributed-spider-co
   libraryDependencies += "commons-logging" % "commons-logging" % commons_logging_version,
   libraryDependencies += "redis.clients" % "jedis" % jedis_version,
   libraryDependencies += "org.slf4j" % "slf4j-api" % slf4j_version,
-  libraryDependencies += "com.thoughtworks.xstream" % "xstream" % xstream_version
+  libraryDependencies += "com.thoughtworks.xstream" % "xstream" % xstream_version,
+  libraryDependencies += "com.esotericsoftware.kryo" % "kryo" % kyro_version
+
 )
 //爬虫
 val spider_cralwer = Project("distributed-spider-crawler", file("distributed-spider-crawler")).settings(
@@ -48,7 +50,8 @@ val spider_cralwer = Project("distributed-spider-crawler", file("distributed-spi
   resolvers ++= resources,
   scalaVersion := scala_version,
   scalacOptions := codePro,
-  libraryDependencies += "com.sksamuel.elastic4s" %% "elastic4s-core" % elastic4s_version
+  libraryDependencies += "com.sksamuel.elastic4s" %% "elastic4s-core" % elastic4s_version,
+  libraryDependencies += "com.typesafe.akka" %% "akka-actor" % akka_version
 ).dependsOn(spider_core)
 
 
