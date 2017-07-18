@@ -11,7 +11,7 @@ import com.young.spider.core.persist.{Persister, PersisterFactory}
   */
 trait SpiderProcesser[Meta] {
 
-  def getQueue(): MessageQueue[Meta]
+  def getQueue[Meta](): MessageQueue[Meta]
 
   def process[Result](config: SpiderConfig): Unit = {
     val crawler: Crawler[Meta] = CrawlerFactory.getCrawler(config.crawler.crawler)

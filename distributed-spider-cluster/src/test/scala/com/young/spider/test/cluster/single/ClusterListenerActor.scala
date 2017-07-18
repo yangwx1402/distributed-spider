@@ -1,4 +1,4 @@
-package com.young.spider.cluster.example.single
+package com.young.spider.test.cluster.single
 
 import akka.actor._
 import akka.cluster.ClusterEvent.{MemberEvent, MemberRemoved, MemberUp, UnreachableMember}
