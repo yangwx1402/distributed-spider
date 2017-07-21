@@ -1,4 +1,4 @@
-package com.young.spider.cluster.example.group
+package com.young.spider.test.cluster.group
 
 /**
   * Created by yangyong3 on 2017/7/11.

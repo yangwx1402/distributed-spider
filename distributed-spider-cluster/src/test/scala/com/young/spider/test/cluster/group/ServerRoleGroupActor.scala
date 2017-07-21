@@ -1,4 +1,4 @@
-package com.young.spider.cluster.example.group
+package com.young.spider.test.cluster.group
 
 import akka.actor.{Actor, ActorSystem, Props}
 import akka.cluster.ClusterEvent.{MemberEvent, MemberJoined, CurrentClusterState, MemberUp}
