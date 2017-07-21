@@ -4,6 +4,8 @@ import java.util.concurrent.BlockingQueue
 
 import com.young.spider.core.mq.{AbstractMessageQueue, MessageQueueException}
 
+import scala.collection.mutable.ListBuffer
+
 /**
   * Created by yangyong3 on 2017/7/18.
   */
@@ -29,6 +31,11 @@ abstract class AbstractSimpleQueue[T](name: String, capacity: Int = 1000) extend
 
 
   @throws[MessageQueueException]
-  override def poll(size: Int): List[T] = Array.fill(size)(poll()).filter(_ != null).toList
-
+  override def poll(size: Int): List[T] = {
+    val listBuffer = new ListBuffer[T]()
+    for(i<-0 until size){
+      listBuffer.+=(poll())
+    }
+    listBuffer.filter(_!=null).toList
+  }
 }
