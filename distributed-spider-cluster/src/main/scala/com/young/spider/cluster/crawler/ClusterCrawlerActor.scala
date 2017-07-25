@@ -44,6 +44,6 @@ class ClusterCrawlerActor extends Actor {
     case state: MemberUp => memberChanged(state.member, MEMBER_ADD)
     case state: MemberRemoved => memberChanged(state.member, MEMBER_REMOVED)
     case request:Request=>
-      val response = CrawlerFactory.getCrawler("")
+      val response = CrawlerFactory.getCrawler("").crawl()
   }
 }

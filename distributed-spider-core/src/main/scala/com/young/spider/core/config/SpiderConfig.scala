@@ -16,4 +16,4 @@ case class SpiderCrawler(@XStreamAsAttribute classname:String, properties:Spider
 case class SpiderProperties(@XStreamImplicit(itemFieldName = "property") properties:Array[SpiderProperty])
 
 @XStreamAlias("property")
-case class SpiderProperty(@XStreamAsAttribute name:String,@XStreamAsAttribute value:String,@XStreamAsAttribute desc:String)
+case class SpiderProperty(@XStreamAsAttribute index:String,@XStreamAsAttribute name:String,@XStreamAsAttribute value:String,@XStreamAsAttribute("class") clazz:String,@XStreamAsAttribute desc:String)

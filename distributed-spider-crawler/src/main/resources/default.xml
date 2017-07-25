@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<spider name="spider-default">
+    <messageQueue classname="com.young.spider.core.mq.support.simple.SimpleBlockingMessageQueue">
+        <properties>
+            <property index="1" name="name" value="common-mq" class="java.lang.String"/>
+            <property index="2" name="capacity" value="10000" class="java.lang.Integer"/>
+        </properties>
+    </messageQueue>
+    <crawler classname="">
+        <properties>
+            <property></property>
+        </properties>
+    </crawler>
+    <parser classname="">
+        <properties>
+            <property></property>
+        </properties>
+    </parser>
+    <persister classname="">
+        <properties>
+            <property></property>
+        </properties>
+    </persister>
+</spider>
